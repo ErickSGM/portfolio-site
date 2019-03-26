@@ -26,12 +26,12 @@ export const IndexPageTemplate = ({
         className="main-description"
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-text-primary"
         >
           {title}
         </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="has-text-weight-semibold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
         >
           {subtitle}
         </h3>
