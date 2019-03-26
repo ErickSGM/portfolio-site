@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 import Layout from '../components/Layout';
 
-export const ExperienceItemTemplate = ({
+export const AccomplishmentItemTemplate = ({
   content,
   contentComponent,
   description,
@@ -47,7 +47,7 @@ export const ExperienceItemTemplate = ({
   )
 }
 
-ExperienceItemTemplate.propTypes = {
+AccomplishmentItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -55,17 +55,17 @@ ExperienceItemTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const ExperienceItem = ({ data }) => {
+const AccomplishmentItem = ({ data }) => {
   const { markdownRemark: Item } = data
 
   return (
     <Layout>
-      <ExperienceItemTemplate
+      <AccomplishmentItemTemplate
         content={Item.html}
         contentComponent={HTMLContent}
         description={Item.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Experience">
+          <Helmet titleTemplate="%s | Accomplishments">
             <title>{`${Item.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -80,16 +80,16 @@ const ExperienceItem = ({ data }) => {
   )
 }
 
-ExperienceItem.propTypes = {
+AccomplishmentItem.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default ExperienceItem
+export default AccomplishmentItem
 
 export const pageQuery = graphql`
-  query ExperienceItemByID($id: String!) {
+  query AccomplishmentItemByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

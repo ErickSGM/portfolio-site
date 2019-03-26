@@ -2,7 +2,7 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-class ExperienceRoll extends React.Component {
+class AccomplishmentsRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: items } = data.allMarkdownRemark
@@ -41,7 +41,7 @@ class ExperienceRoll extends React.Component {
   }
 }
 
-ExperienceRoll.propTypes = {
+AccomplishmentsRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -52,10 +52,10 @@ ExperienceRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query ExperienceRollQuery {
+      query AccomplishmentsRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "experience-item" } } }
+          filter: { frontmatter: { templateKey: { eq: "accomplishment-item" } } }
         ) {
           edges {
             node {
@@ -74,6 +74,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <ExperienceRoll data={data} count={count} />}
+    render={(data, count) => <AccomplishmentsRoll data={data} count={count} />}
   />
 )

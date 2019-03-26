@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ExperienceRoll from '../../components/ExperienceRoll';
+import AccomplishmentsRoll from '../../components/AccomplishmentsRoll';
 import Layout from '../../components/Layout';
 
-export default class ExperienceIndexPage extends React.Component {
+export default class AccomplishmentsIndexPage extends React.Component {
   render() {
     return (
       <Layout>
@@ -13,7 +13,7 @@ export default class ExperienceIndexPage extends React.Component {
               <div
                 className="full-width-image-container margin-top-0"
                 style={{
-                  backgroundImage: `url('/img/Experience-index.jpg')`,
+                  backgroundImage: `url('/img/accomplishments-index.jpg')`,
                 }}
               >
                 <h1
@@ -29,7 +29,7 @@ export default class ExperienceIndexPage extends React.Component {
                 </h1>
               </div>
             </div>
-            <ExperienceRoll />
+            <AccomplishmentsRoll />
           </div>
         </section>
       </Layout>

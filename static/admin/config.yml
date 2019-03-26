@@ -36,13 +36,13 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curriculum-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/experience/index.md"
-        label: "Experience Page"
-        name: "experience"
+      - file: "src/pages/accomplishments/index.md"
+        label: "Accomplishments Page"
+        name: "accomplishments"
         create: true
         slug: "{{slug}}"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experience-item"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "accomplishment-item"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Body", name: "body", widget: "markdown"}

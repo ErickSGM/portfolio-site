@@ -2,7 +2,7 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ExperienceRoll from '../components/ExperienceRoll';
+import AccomplishmentsRoll from '../components/AccomplishmentsRoll';
 import Features from '../components/Features';
 import Layout from '../components/Layout';
 
@@ -99,9 +99,9 @@ export const IndexPageTemplate = ({
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
                   </h3>
-                  <ExperienceRoll />
+                  <AccomplishmentsRoll />
                   <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/experience">
+                    <Link className="btn" to="/accomplishments">
                       Read more
                     </Link>
                   </div>
