@@ -31,6 +31,13 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/dynamic-content/`,
+        name: "markdown-pages",
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

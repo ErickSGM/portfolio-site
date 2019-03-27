@@ -10,8 +10,8 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "Index Page"
+        label: "Landing"
+        name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Intro, name: intro, widget: object, fields: [
@@ -19,14 +19,15 @@ collections:
               ]
             }
       - file: "src/pages/curriculum/index.md"
-        label: "Curriculum Page"
+        label: "Curriculum"
         name: "curriculum"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curriculum-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/accomplishments/index.md"
-        label: "Accomplishments Page"
+      - folder: "dynamic-content/accomplishments"
+        label: "Accomplishments"
+        label_singular: "Accomplishment"
         name: "accomplishments"
         create: true
         slug: "{{slug}}"
@@ -36,3 +37,14 @@ collections:
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Tags", name: "tags", widget: "list"}
+      - folder: "dynamic-content/skills"
+        label: "Skills"
+        label_singular: "Skill"
+        name: "skills"
+        slug: "{{slug}}"
+        create: true
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skill-item"}
+          - {label: Title, name: title, widget: string}
+          - {label: Type, name: type, widget: select, options: ["Frontend", "Backend", "Others"]}
+          - {label: Value, name: value, widget: text}

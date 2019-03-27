@@ -1,11 +1,18 @@
 @import "~bulma/sass/utilities/initial-variables"
 
-$primary: #ff7905
+$monokai-background: #2C292D
+$monokai-font-white: #E4E9EC
+$monokai-font-highlight-declaration: #64CADD
+$monokai-font-highlight-string: #D1A74A
+$monokai-font-highlight-method: #AADA66
+$monokai-font-highlight-param: #D87749
+
+$primary: $monokai-font-white
 $primary-invert: #eeeeee
 $body-color: #333
 $black: #2b2523
 $background-primary: $white
-$background-dark: #293347
+$background-dark: $monokai-background
 $navbar-background-color: transparent
 $navbar-item-color: white
 
@@ -92,3 +99,4 @@ footer.footer
     display: inline
 
 @import "~bulma"
+@import "~bulma/sass/elements/image"
