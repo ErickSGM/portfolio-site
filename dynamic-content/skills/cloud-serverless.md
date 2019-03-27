@@ -1,7 +1,7 @@
 ---
 templateKey: skill-item
-title: .Net
+title: Cloud & Serverless
 type: Backend
-value: 90
+value: 55
 ---
 

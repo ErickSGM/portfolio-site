@@ -1,7 +1,7 @@
 ---
 templateKey: skill-item
-title: React and Ecosystem
+title: HTML & CSS
 type: Frontend
-value: 88
+value: 75
 ---
 

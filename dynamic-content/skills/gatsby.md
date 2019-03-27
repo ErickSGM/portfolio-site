@@ -1,7 +1,7 @@
 ---
 templateKey: skill-item
-title: React and Ecosystem
+title: Gatsby
 type: Frontend
-value: 88
+value: 65
 ---
 

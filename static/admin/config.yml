@@ -28,7 +28,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skill-item"}
       - {label: Title, name: title, widget: string}
       - {label: Type, name: type, widget: select, options: ["Frontend", "Backend", "Others"]}
-      - {label: Value, name: value, widget: text}
+      - {label: Value, name: value, widget: number}
   - name: "pages"
     label: "Pages"
     files:
