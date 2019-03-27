@@ -6,10 +6,33 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - folder: "dynamic-content/accomplishments"
+    label: "Accomplishments"
+    label_singular: "Accomplishment"
+    name: "accomplishments"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "accomplishment-item"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+  - folder: "dynamic-content/skills"
+    label: "Skills"
+    label_singular: "Skill"
+    name: "skills"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skill-item"}
+      - {label: Title, name: title, widget: string}
+      - {label: Type, name: type, widget: select, options: ["Frontend", "Backend", "Others"]}
+      - {label: Value, name: value, widget: text}
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "dynamic-content/index.md"
         label: "Landing"
         name: "index"
         fields:
@@ -18,33 +41,10 @@ collections:
                 {label: Title, name: title, widget: string}, {label: subtitle, name: subtitle, widget: text}, {label: Image, name: image, widget: image}, {label: ProfileImage, name: profileimage, widget: image}
               ]
             }
-      - file: "src/pages/curriculum/index.md"
+      - file: "dynamic-content/curriculum/index.md"
         label: "Curriculum"
         name: "curriculum"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curriculum-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - folder: "dynamic-content/accomplishments"
-        label: "Accomplishments"
-        label_singular: "Accomplishment"
-        name: "accomplishments"
-        create: true
-        slug: "{{slug}}"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "accomplishment-item"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Tags", name: "tags", widget: "list"}
-      - folder: "dynamic-content/skills"
-        label: "Skills"
-        label_singular: "Skill"
-        name: "skills"
-        slug: "{{slug}}"
-        create: true
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skill-item"}
-          - {label: Title, name: title, widget: string}
-          - {label: Type, name: type, widget: select, options: ["Frontend", "Backend", "Others"]}
-          - {label: Value, name: value, widget: text}
