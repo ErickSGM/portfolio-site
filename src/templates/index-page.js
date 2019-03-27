@@ -7,6 +7,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
+import AllSkills from '../components/skills/AllSkills';
 
 export const IndexPageTemplate = ({
   image,
@@ -16,7 +17,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <div
-      className="intro full-width-parallax-image margin-top-0"
+      className="section intro full-width-parallax-image margin-top-0"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
@@ -43,6 +44,12 @@ export const IndexPageTemplate = ({
         </figure>
         <hr/>
         <Navbar />
+      </div>
+    </div>
+    <div className="section">
+      <div className="container">
+        <h2 className="title has-text-centered">Skills</h2>
+        <AllSkills/>
       </div>
     </div>
   </div>

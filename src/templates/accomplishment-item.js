@@ -33,7 +33,7 @@ export const AccomplishmentItemTemplate = ({
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
-                    <li key={tag + `tag`}>
+                    <li className="tag is-primary" key={tag + `tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}

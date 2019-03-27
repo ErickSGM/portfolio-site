@@ -1,14 +1,24 @@
 @import "~bulma/sass/utilities/initial-variables"
 
+$monokai-light-font-highlight-white: #FFFFFE
+$monokai-light-font-highlight-purple: #684D99
+$monokai-light-font-highlight-dark: #49483E
+$monokai-light-font-highlight-gray: #75715E
+$monokai-light-font-highlight-blue: #0089B3
+$monokai-light-font-highlight-orange: #CF7000
+$monokai-light-font-highlight-light-green: #998F2F
+$monokai-light-font-highlight-green: #679C00
+
 $monokai-background: #2C292D
 $monokai-font-white: #E4E9EC
-$monokai-font-highlight-declaration: #64CADD
-$monokai-font-highlight-string: #D1A74A
-$monokai-font-highlight-method: #AADA66
-$monokai-font-highlight-param: #D87749
+$monokai-font-highlight-blue: #6ed9ec
+$monokai-font-highlight-yellow: #ecbd55
+$monokai-font-highlight-green: #AADA66
+$monokai-font-highlight-orange: #ffa377
 
 $primary: $monokai-font-white
-$primary-invert: #eeeeee
+$info: $monokai-font-highlight-yellow
+$link: $monokai-light-font-highlight-purple
 $body-color: #333
 $black: #2b2523
 $background-primary: $white
@@ -91,7 +101,6 @@ footer.footer
 .social a
     padding: .5em .5em .3em .5em
     border-radius: 1em
-    background-color: $white-ter
     margin: .5em
     width: 1em
     height: 1em
@@ -100,3 +109,7 @@ footer.footer
 
 @import "~bulma"
 @import "~bulma/sass/elements/image"
+@import "~bulma/sass/components/message"
+
+.message-header.is-centered
+  justify-content: center
