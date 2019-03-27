@@ -1,6 +1,7 @@
 import './index-page.sass';
 
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -35,14 +36,11 @@ export const IndexPageTemplate = ({
         >
           {subtitle}
         </h3>
-        <div
-          className="profile-image"
-          style={{
-            backgroundImage: `url(${
-              !!profileimage.childImageSharp ? profileimage.childImageSharp.fluid.src : profileimage
-            })`,
-        }}/>
-
+        <figure className="image is-128x128">
+          <Img
+            className="profile-image is-rounded"
+            fixed={profileimage.childImageSharp.fixed}/>
+        </figure>
         <hr/>
         <Navbar />
       </div>
@@ -93,8 +91,8 @@ export const pageQuery = graphql`
           subtitle
           profileimage {
             childImageSharp {
-              fluid(maxWidth: 128, quality: 100) {
-                ...GatsbyImageSharpFluid
+              fixed(width: 128, quality: 100) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
