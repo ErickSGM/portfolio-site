@@ -107,9 +107,26 @@ footer.footer
     vertical-align: middle
     display: inline
 
-@import "~bulma"
-@import "~bulma/sass/elements/image"
-@import "~bulma/sass/components/message"
+.is-rounded
+  border-radius: 100px
+  div.gatsby-image-wrapper
+    border-radius: 100px
+  img
+    border-radius: 100px
 
-.message-header.is-centered
-  justify-content: center
+@import "~bulma"
+
+$mac-header-dark-top-color: #404040
+$mac-header-dark-middle-color: #3C3C3C
+$mac-header-dark-bottom-color: #363738
+
+.message.is-ios-window
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.55);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border: 1px solid $mac-header-dark-top-color;
+
+  .message-header
+    justify-content: center
+    border-bottom: 1px solid #b1aeb1;
+    background: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 54px 50%, #cfcfcf 0px, #d3d3d3 5px, #c6c6c6 6px, rgba(255, 255, 255, 0) 7px),linear-gradient(to top, #363738 0%, #3C3C3C 1px, #404040 100%);

@@ -2,18 +2,16 @@ import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { selectAllMarkdownEntityValues } from '../../helpers/selectAll';
 import SkillTypeColumn from './SkillTypeColumn';
 
 class Skills extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: items } = data.allMarkdownRemark
-    console.log(items);
-    const itemsByType = items.map(x => x.node.frontmatter).reduce((acc, item) => ({
+    const { skills } = this.props
+    const itemsByType = skills.reduce((acc, item) => ({
       ...acc,
       [item.type]: !!acc[item.type] ? acc[item.type].concat(item) : [item]
     }), {})
-    console.log(itemsByType);
     return (
       <div className="columns">
         {Object.entries(itemsByType).map(([type, skills]) => (
@@ -51,6 +49,6 @@ export default () => (
         }
       }
     `}
-    render={(data) => <Skills data={data}/>}
+    render={(data) => <Skills skills={selectAllMarkdownEntityValues(data)}/>}
   />
 )
