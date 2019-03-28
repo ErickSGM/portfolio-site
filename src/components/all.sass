@@ -9,8 +9,9 @@ $monokai-light-font-highlight-orange: #CF7000
 $monokai-light-font-highlight-light-green: #998F2F
 $monokai-light-font-highlight-green: #679C00
 
-$monokai-background: #151718
+$monokai-background: #2C292D
 $monokai-font-white: #E4E9EC
+$monokai-font-highlight-white: #55B5DB
 $monokai-font-highlight-blue: #55B5DB
 $monokai-font-highlight-yellow: #E6CD69
 $monokai-font-highlight-green: #9FCA56
@@ -20,13 +21,13 @@ $monokai-font-highlight-red: #CD3F45
 
 $primary: $monokai-font-white
 $info: $monokai-font-highlight-yellow
-$link: $monokai-font-highlight-purple
+$link: $monokai-font-highlight-green
 $danger: $monokai-font-highlight-red
 $black: #2b2523
 $background-primary: $white
 $background-dark: $monokai-background
 $navbar-background-color: transparent
-$navbar-item-color: white
+$navbar-item-color: $monokai-font-white
 
 .content .taglist
   list-style: none
@@ -127,11 +128,15 @@ $mac-header-dark-bottom-color: #363738
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border: 1px solid $mac-header-dark-top-color;
+  background-color: $monokai-background
 
   .message-header
     justify-content: center
     background: radial-gradient(7px at 24px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 44px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 64px 50%, #27C93F 0px, #27C93F 5px, #27C93F 6px, rgba(255, 255, 255, 0) 7px)
-    background-color: $monokai-background
+    background-color: transparent
 
   .message-body
-    background-color: $monokai-background
+    background-color: transparent
+  
+.notification
+  background-color: $monokai-background

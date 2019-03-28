@@ -21,10 +21,10 @@ class AccomplishmentsRoll extends React.Component {
                 >
                   {item.frontmatter.title}
                 </Link>
-                <p className="subtitle is-size-5 is-block is-5">
+                <p className="has-text-info subtitle is-size-5 is-block is-5">
                   {item.frontmatter.date}
                 </p>
-                <p className="is-spaced">
+                <p className="has-text-primary">
                   {item.excerpt}
                 </p>
                 <div className="level">
