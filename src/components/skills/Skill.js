@@ -12,7 +12,7 @@ export default function ({ title, value }) {
             </div>
             <div className="media-content">
                 <div className="content">
-                    <Link to={`/tags/${kebabCase(title)}/`} className="has-text-link is-size-6 has-text-weight-semibold">
+                    <Link to={`/tags/${kebabCase(title)}/`} className="has-text-link is-size-5 has-text-weight-semibold">
                         {title}
                     </Link>
                     <progress className="progress is-danger" value={value} max="100">{value}</progress>

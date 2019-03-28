@@ -1,7 +1,6 @@
 ---
 templateKey: skill-item
-title: Angular and Ecosystem
+title: Angular 2+
 type: Frontend
 value: 81
 ---
-

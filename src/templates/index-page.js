@@ -7,7 +7,6 @@ import React from 'react';
 
 import AccomplishmentsRoll from '../components/accomplishments/AccomplishmentsRoll';
 import Layout from '../components/Layout';
-import Navbar from '../components/Navbar';
 import AllSkills from '../components/skills/AllSkills';
 
 export const IndexPageTemplate = ({
@@ -20,31 +19,28 @@ export const IndexPageTemplate = ({
     <div
       className="section intro full-width-parallax-image margin-top-0"
       style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
+        backgroundImage: `url(${image.publicURL})`,
       }}
     >
       <div
         className="main-description"
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-text-primary"
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-text-info has-text-centered"
         >
           {title}
         </h1>
         <h3
-          className="has-text-weight-semibold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="has-text-weight-semibold is-size-5-mobile is-size-5-tablet is-size-4-widescreen has-text-centered"
         >
           {subtitle}
         </h3>
-        <figure className="image is-128x128">
+        <figure className="image">
           <Img
             className="profile-image is-rounded"
             fixed={profileimage.childImageSharp.fixed}/>
         </figure>
         <hr/>
-        <Navbar />
       </div>
     </div>
     <div className="section">
@@ -105,17 +101,13 @@ export const pageQuery = graphql`
           subtitle
           profileimage {
             childImageSharp {
-              fixed(width: 128, quality: 100) {
+              fixed(width: 256, quality: 100) {
                 ...GatsbyImageSharpFixed
               }
             }
           }
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
         }
       }
