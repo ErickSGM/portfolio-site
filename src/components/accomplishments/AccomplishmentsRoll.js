@@ -2,6 +2,8 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import AccomplishmentTags from './AccomplishmentTags';
+
 class AccomplishmentsRoll extends React.Component {
   render() {
     const { data } = this.props
@@ -13,26 +15,28 @@ class AccomplishmentsRoll extends React.Component {
           items.map(({ node: item }) => (
             <div className="is-parent column is-6" key={item.id}>
               <article className="tile is-child box notification">
-                <p>
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={item.fields.slug}
-                  >
-                    {item.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {item.frontmatter.date}
-                  </span>
+                <Link
+                  className="title has-text-link is-size-4 is-4 is-block"
+                  to={item.fields.slug}
+                >
+                  {item.frontmatter.title}
+                </Link>
+                <p className="subtitle is-size-5 is-block is-5">
+                  {item.frontmatter.date}
                 </p>
-                <p>
+                <p className="is-spaced">
                   {item.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={item.fields.slug}>
-                    Keep Reading →
-                  </Link>
                 </p>
+                <div className="level">
+                  <div className="level-left">
+                    <Link className="level-item button" to={item.fields.slug}>
+                      Keep Reading →
+                    </Link>
+                  </div>
+                  <div className="level-right">
+                    <AccomplishmentTags tags={item.frontmatter.tags}/>
+                  </div>
+                </div>
               </article>
             </div>
           ))}
@@ -68,6 +72,7 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
+                tags
               }
             }
           }

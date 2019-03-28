@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import AccomplishmentsRoll from '../components/accomplishments/AccomplishmentsRoll';
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
 import AllSkills from '../components/skills/AllSkills';
@@ -50,6 +51,12 @@ export const IndexPageTemplate = ({
       <div className="container">
         <h2 className="title has-text-centered">Skills</h2>
         <AllSkills/>
+      </div>
+    </div>
+    <div className="section">
+      <div className="container">
+        <h2 className="title has-text-centered">Accomplishments</h2>
+        <AccomplishmentsRoll/>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AccomplishmentsRoll from '../../components/AccomplishmentsRoll';
+import AccomplishmentsRoll from '../../components/accomplishments/AccomplishmentsRoll';
 import Layout from '../../components/Layout';
 
 export default class AccomplishmentsIndexPage extends React.Component {

@@ -9,17 +9,19 @@ $monokai-light-font-highlight-orange: #CF7000
 $monokai-light-font-highlight-light-green: #998F2F
 $monokai-light-font-highlight-green: #679C00
 
-$monokai-background: #2C292D
+$monokai-background: #151718
 $monokai-font-white: #E4E9EC
-$monokai-font-highlight-blue: #6ed9ec
-$monokai-font-highlight-yellow: #ecbd55
-$monokai-font-highlight-green: #AADA66
+$monokai-font-highlight-blue: #55B5DB
+$monokai-font-highlight-yellow: #E6CD69
+$monokai-font-highlight-green: #9FCA56
 $monokai-font-highlight-orange: #ffa377
+$monokai-font-highlight-purple: #a074c4
+$monokai-font-highlight-red: #CD3F45
 
 $primary: $monokai-font-white
 $info: $monokai-font-highlight-yellow
-$link: $monokai-light-font-highlight-purple
-$body-color: #333
+$link: $monokai-font-highlight-purple
+$danger: $monokai-font-highlight-red
 $black: #2b2523
 $background-primary: $white
 $background-dark: $monokai-background
@@ -128,5 +130,8 @@ $mac-header-dark-bottom-color: #363738
 
   .message-header
     justify-content: center
-    border-bottom: 1px solid #b1aeb1;
-    background: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 54px 50%, #cfcfcf 0px, #d3d3d3 5px, #c6c6c6 6px, rgba(255, 255, 255, 0) 7px),linear-gradient(to top, #363738 0%, #3C3C3C 1px, #404040 100%);
+    background: radial-gradient(7px at 24px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 44px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px),radial-gradient(7px at 64px 50%, #27C93F 0px, #27C93F 5px, #27C93F 6px, rgba(255, 255, 255, 0) 7px)
+    background-color: $monokai-background
+
+  .message-body
+    background-color: $monokai-background
