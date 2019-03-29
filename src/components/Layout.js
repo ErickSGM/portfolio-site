@@ -10,7 +10,7 @@ const TemplateWrapper = ({ children }) => {
   const siteData = useSiteMetadata()
   const { title, description } = siteData;
   return (
-    <div>
+    <div className="site">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -46,7 +46,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
-      <div>{children}</div>
+      <div className="main">{children}</div>
       <Footer />
     </div>
   )

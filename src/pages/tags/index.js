@@ -1,8 +1,9 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import { graphql, Link } from 'gatsby';
+import { kebabCase } from 'lodash';
+import React from 'react';
+import Helmet from 'react-helmet';
+
+import Layout from '../../components/Layout';
 
 const TagsPage = ({
   data: {
@@ -14,7 +15,7 @@ const TagsPage = ({
 }) => (
   <Layout>
     <section className="section">
-      <Helmet title={`Tags | ${title}`} />
+      <Helmet title={`Skills | ${title}`} />
       <div className="container content">
         <div className="columns">
           <div
