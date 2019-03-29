@@ -43,6 +43,13 @@ export default () => (
                 title
                 type
                 value
+                img {
+                  childImageSharp {
+                    fixed(width: 48, quality: 100) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
               }
             }
           }

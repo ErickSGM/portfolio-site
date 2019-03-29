@@ -1,7 +1,8 @@
 ---
 templateKey: skill-item
 title: Docker & Devops
-type: Others
+type: General
 value: 55
+img: /img/skills/docker.png
 ---
 

@@ -1,7 +1,8 @@
 ---
 templateKey: skill-item
 title: 'DDD, CQRS & ES'
-type: Others
+type: General
 value: 75
+img: /img/skills/cqrs.png
 ---
 

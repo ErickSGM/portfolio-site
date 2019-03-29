@@ -10,7 +10,9 @@ export default function SkillTypeColumn({skillType, skillsInType}) {
                     <p className="has-text-info">{skillType}</p>
                 </div>
                 <div className="message-body is-three-quarters is-offset-2">
-                    {skillsInType.map((skill) => 
+                    {skillsInType
+                        .sort((x, y) => y.value - x.value)
+                        .map((skill) => 
                         <Skill key={skill.title} {...skill}/>
                     )}
                 </div>

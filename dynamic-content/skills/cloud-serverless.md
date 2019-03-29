@@ -2,6 +2,7 @@
 templateKey: skill-item
 title: Cloud & Serverless
 type: Backend
-value: 55
+value: 60
+img: /img/skills/cloud.png
 ---
 

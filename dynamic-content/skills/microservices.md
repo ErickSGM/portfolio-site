@@ -1,7 +1,8 @@
 ---
 templateKey: skill-item
 title: Microservices
-type: Others
+type: Backend
 value: 70
+img: /img/skills/microservices.png
 ---
 

@@ -1,7 +1,8 @@
 ---
 templateKey: skill-item
 title: Agile & Scrum
-type: Others
-value: 70
+type: General
+value: 75
+img: /img/skills/agile.png
 ---
 

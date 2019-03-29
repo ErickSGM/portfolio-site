@@ -1,7 +1,8 @@
 ---
 templateKey: skill-item
 title: Reactive Programming
-type: Others
-value: 60
+type: General
+value: 65
+img: /img/skills/reactive.png
 ---
 
