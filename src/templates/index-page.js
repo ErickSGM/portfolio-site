@@ -19,7 +19,9 @@ export const IndexPageTemplate = ({
     <div
       className="section intro full-width-parallax-image margin-top-0"
       style={{
-        backgroundImage: `url(${image.publicURL})`,
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
       }}
     >
       <div
@@ -107,7 +109,11 @@ export const pageQuery = graphql`
             }
           }
           image {
-            publicURL
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
