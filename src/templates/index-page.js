@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import GithubCorner from 'react-github-corner';
 
 import AccomplishmentsRoll from '../components/accomplishments/AccomplishmentsRoll';
 import Layout from '../components/Layout';
@@ -14,6 +15,7 @@ export const IndexPageTemplate = ({
   title,
   subtitle,
   profileimage,
+  github,
 }) => (
   <div>
     <div
@@ -57,6 +59,7 @@ export const IndexPageTemplate = ({
         <AccomplishmentsRoll/>
       </div>
     </div>
+    <GithubCorner href={github} />
   </div>
 )
 
@@ -66,6 +69,7 @@ IndexPageTemplate.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     profileimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    github: PropTypes.string,
   }),
 }
 
@@ -79,6 +83,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.intro.title}
         subtitle={frontmatter.intro.subtitle}
         profileimage={frontmatter.intro.profileimage}
+        github={frontmatter.intro.github}
       />
     </Layout>
   )
@@ -101,6 +106,7 @@ export const pageQuery = graphql`
         intro {
           title
           subtitle
+          github
           profileimage {
             childImageSharp {
               fixed(width: 256, quality: 100) {

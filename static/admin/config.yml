@@ -30,6 +30,7 @@ collections:
       - {label: Type, name: type, widget: select, options: ["Frontend", "Backend", "General"]}
       - {label: Value, name: value, widget: number}
       - {label: Image, name: img, widget: image}
+      - {label: Github, name: github, widget: string}
   - name: "pages"
     label: "Pages"
     files:
