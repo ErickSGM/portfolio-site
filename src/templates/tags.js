@@ -1,12 +1,13 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { graphql, Link } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+
+import Layout from '../components/Layout';
 
 class TagRoute extends React.Component {
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
+    const accomplishments = this.props.data.allMarkdownRemark.edges
+    const accomplishmentsLinks = accomplishments.map(post => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
           <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
@@ -16,7 +17,7 @@ class TagRoute extends React.Component {
     const tag = this.props.pageContext.tag
     const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
+    const tagHeader = `${totalCount} accomplishment${
       totalCount === 1 ? '' : 's'
     } tagged with “${tag}”`
 
@@ -31,9 +32,9 @@ class TagRoute extends React.Component {
                 style={{ marginBottom: '6rem' }}
               >
                 <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                <ul className="taglist">{postLinks}</ul>
+                <ul className="taglist">{accomplishmentsLinks}</ul>
                 <p>
-                  <Link to="/tags/">Browse all tags</Link>
+                  <Link to="/tags/">Browse all skills</Link>
                 </p>
               </div>
             </div>
@@ -55,7 +56,6 @@ export const tagPageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

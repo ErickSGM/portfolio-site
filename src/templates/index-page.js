@@ -7,6 +7,7 @@ import React from 'react';
 import GithubCorner from 'react-github-corner';
 
 import AccomplishmentsRoll from '../components/accomplishments/AccomplishmentsRoll';
+import HTMLContent from '../components/Content';
 import Layout from '../components/Layout';
 import AllSkills from '../components/skills/AllSkills';
 
@@ -14,6 +15,7 @@ export const IndexPageTemplate = ({
   image,
   title,
   subtitle,
+  about,
   profileimage,
   github,
 }) => (
@@ -27,7 +29,7 @@ export const IndexPageTemplate = ({
       }}
     >
       <div
-        className="main-description"
+        className="short-description"
       >
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-text-info has-text-centered"
@@ -48,14 +50,20 @@ export const IndexPageTemplate = ({
       </div>
     </div>
     <div className="section">
+      <div className="about container">
+        <h2 className="title has-text-centered">A little about myself</h2>
+        <HTMLContent className="is-size-4" content={about} />
+      </div>
+    </div>
+    <div className="section">
       <div className="container">
-        <h2 className="title has-text-centered">Skills</h2>
+        <h2 className="title has-text-centered">What I know</h2>
         <AllSkills/>
       </div>
     </div>
     <div className="section">
       <div className="container">
-        <h2 className="title has-text-centered">Accomplishments</h2>
+        <h2 className="title has-text-centered">What I've been doing</h2>
         <AccomplishmentsRoll/>
       </div>
     </div>
@@ -68,6 +76,7 @@ IndexPageTemplate.propTypes = {
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     subtitle: PropTypes.string,
+    content: PropTypes.node.isRequired,
     profileimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     github: PropTypes.string,
   }),
@@ -81,6 +90,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.intro.image}
         title={frontmatter.intro.title}
+        about={data.markdownRemark.html}
         subtitle={frontmatter.intro.subtitle}
         profileimage={frontmatter.intro.profileimage}
         github={frontmatter.intro.github}
@@ -102,6 +112,7 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         intro {
           title

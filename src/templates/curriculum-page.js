@@ -2,12 +2,10 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Content, { HTMLContent } from '../components/Content';
+import HTMLContent from '../components/Content';
 import Layout from '../components/Layout';
 
-export const CurriculumPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
+export const CurriculumPageTemplate = ({ title, content}) => {
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -17,7 +15,7 @@ export const CurriculumPageTemplate = ({ title, content, contentComponent }) => 
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              <PageContent className="content" content={content} />
+              <HTMLContent className="content" content={content} />
             </div>
           </div>
         </div>
@@ -29,7 +27,6 @@ export const CurriculumPageTemplate = ({ title, content, contentComponent }) => 
 CurriculumPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  contentComponent: PropTypes.func,
 }
 
 const CurriculumPage = ({ data }) => {
@@ -38,7 +35,6 @@ const CurriculumPage = ({ data }) => {
   return (
     <Layout>
       <CurriculumPageTemplate
-        contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
       />

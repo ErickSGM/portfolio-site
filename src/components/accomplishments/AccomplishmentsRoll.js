@@ -1,3 +1,5 @@
+import './AccomplishmentsRoll.sass';
+
 import { graphql, Link, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -10,7 +12,7 @@ class AccomplishmentsRoll extends React.Component {
     const { edges: items } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
+      <div className="accomplishments-roll columns is-multiline">
         {items &&
           items.map(({ node: item }) => (
             <div className="is-parent column is-6" key={item.id}>
@@ -21,13 +23,10 @@ class AccomplishmentsRoll extends React.Component {
                 >
                   {item.frontmatter.title}
                 </Link>
-                <p className="has-text-info subtitle is-size-5 is-block is-5">
-                  {item.frontmatter.date}
-                </p>
                 <p className="has-text-primary">
                   {item.excerpt}
                 </p>
-                <div className="level">
+                <div className="accomplishment-footer level">
                   <div className="level-left">
                     <Link className="level-item button" to={item.fields.slug}>
                       Keep Reading →
@@ -58,7 +57,6 @@ export default () => (
     query={graphql`
       query AccomplishmentsRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "accomplishment-item" } } }
         ) {
           edges {
@@ -71,7 +69,6 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
                 tags
               }
             }
