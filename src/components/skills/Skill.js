@@ -8,7 +8,7 @@ import Image from '../Image';
 
 export default function ({ title, value, img }) {
     return (
-        <article className="media">
+        <article className="media skill-box">
             <div className="media-left">
                 <figure className="image is-48x48 is-rounded">
                     <Image imageInfo={{alt: title + " icon", image: img}}/>
@@ -16,7 +16,7 @@ export default function ({ title, value, img }) {
             </div>
             <div className="media-content">
                 <div className="skill content">
-                    <Link to={`/tags/${kebabCase(title)}/`} className="has-text-link is-size-5 has-text-weight-semibold">
+                    <Link to={`/tags/${kebabCase(title)}/`} className="skill-title has-text-link is-size-5 has-text-weight-semibold">
                         {title}
                     </Link>
                     <div className="skill-counter">
