@@ -10,4 +10,4 @@ tags:
   - event-sourcing
 ---
 
-I participated in the architecture and creation of a new and improved system. We moved from a monolith to a full microservices infrastructure, using elastic principles, actor model and CQRSES principles. One of the biggest challenges was to make address state transactional, using Actor Model so that we could scale up to thousands of change requests. Another hurdle we overcame was to replicate data between services and keep it up to date keeping the system resilient and responsive.
+I participated in the architecture and creation of a new and improved system. We moved from a monolith to a full microservices infrastructure, using elastic principles, actor model and CQRS and ES principles. One of the biggest challenges was to make address state transactional, using Actor Model so that we could scale up to thousands of change requests. Another hurdle we overcame was to replicate data between services, making each service independent and the overall system more resilient and responsive.
