@@ -7,5 +7,7 @@ tags:
   - redux
   - microservices
   - saas
+  - microfrontend
 ---
-One of the jobs was to transform their git based SAAS system for a real white label system that would require little to none work to customize for each of their clients. To do this we implemented different javascript loading for each client and made a lot of customization points where we could specify what component would render on there, the props we would pass to the component or CSS we would apply on that page or component.
+
+We've managed to transform an insurance company system to make it support SaaS/White labeling, so it requires little to none work to customize for each of their clients, instead of forks and a few weeks that we had to do before this transformation. To do this, we implemented different javascript loading for each client and made a lot of customization points where we can specify which component may render, the props it receives, and the overall stylization. Even though our squad works mostly with react, because we are in a micro frontend architecture, we need to integrate frontend made with Angular 6 and react through web components, as each team has the freedom to choose their language and stack.

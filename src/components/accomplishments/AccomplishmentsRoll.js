@@ -27,11 +27,6 @@ class AccomplishmentsRoll extends React.Component {
                   {item.excerpt}
                 </p>
                 <div className="accomplishment-footer level">
-                  <div className="level-left">
-                    <Link className="level-item button" to={item.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </div>
                   <div className="level-right">
                     <AccomplishmentTags tags={item.frontmatter.tags}/>
                   </div>
