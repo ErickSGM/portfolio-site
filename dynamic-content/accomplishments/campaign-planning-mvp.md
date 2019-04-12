@@ -1,6 +1,6 @@
 ---
 templateKey: accomplishment-item
-title: Anlytics election campaign planning
+title: Analytics election campaign planning
 description: MVP project to help planning election campaigns
 tags:
   - angular
